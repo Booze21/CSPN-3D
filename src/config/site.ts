@@ -5,8 +5,8 @@ export const instagram = {
 }
 
 export const site = {
-  title: 'ANCIENT',
-  subtitle: 'THE ART OF ETERNITY',
+  title: 'Welcome',
+  subtitle: '',
   buttonLabel: 'Open Instagram',
   model: 'models/david.glb', // file inside /public
 }
