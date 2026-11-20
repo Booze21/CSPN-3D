@@ -27,8 +27,6 @@ export default function App() {
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,.6)_100%)]" />
 
-      <span className="absolute left-6 top-6 font-serif text-lg tracking-[0.35em] md:left-12 md:top-10">{site.title}</span>
-
       <div className="fade-up pointer-events-none absolute inset-x-0 top-[14%] px-6 text-center">
         <h1 className="font-serif text-5xl font-light leading-none tracking-[0.2em] sm:text-7xl md:text-8xl">{site.title}</h1>
         <p className="mt-4 text-[10px] uppercase tracking-[0.5em] text-white/60 sm:text-xs">{site.subtitle}</p>
