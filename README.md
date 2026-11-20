@@ -1,4 +1,4 @@
-# ANCIENT — Interactive 3D Sculpture Gallery
+# Aziz's Insta
 
 React · Vite · TypeScript · Three.js · React Three Fiber · Drei · Tailwind CSS
 
