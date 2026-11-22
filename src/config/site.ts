@@ -9,7 +9,6 @@ export const site = {
   subtitle: 'THE ART OF ETERNITY',
   buttonLabel: 'Open Instagram',
   hint: 'Tap the statue',
-  hall: 'models/hall.glb', // full-screen background building
 }
 
 /** Statue + heads. Clicking the statue switches to the next one.

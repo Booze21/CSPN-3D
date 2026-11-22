@@ -1,9 +1,8 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useMemo } from 'react'
 import { useProgress } from '@react-three/drei'
 import { instagram, site } from './config/site'
 
 const Hero3D = lazy(() => import('./components/Hero3D'))
-const HallBackground = lazy(() => import('./components/HallBackground'))
 const RingEffects = lazy(() => import('./components/RingEffects'))
 
 const IgIcon = () => (
@@ -19,11 +18,8 @@ function Progress() {
 export default function App() {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const webgl = useMemo(() => { try { return !!document.createElement('canvas').getContext('webgl2') } catch { return false } }, [])
-  const [showHall, setShowHall] = useState(false)
-  useEffect(() => { const t = setTimeout(() => setShowHall(true), 1200); return () => clearTimeout(t) }, [])
   return (
     <main className="relative h-[100svh] w-full overflow-hidden bg-[#07080a]">
-      {webgl && showHall && <Suspense fallback={null}><HallBackground reduced={reduced} /></Suspense>}
       {webgl && !reduced && <Suspense fallback={null}><RingEffects /></Suspense>}
       {webgl && <div className="absolute inset-0"><Suspense fallback={null}><Hero3D reduced={reduced} /></Suspense></div>}
       {webgl && <Progress />}
@@ -32,8 +28,6 @@ export default function App() {
         {[0, 1, 2, 3].map((i) => <span key={i} className="h-full w-px bg-white/[0.07]" />)}
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,.6)_100%)]" />
-
-      <span className="absolute left-6 top-6 font-serif text-lg tracking-[0.35em] md:left-12 md:top-10">{site.title}</span>
 
       <div className="fade-up pointer-events-none absolute inset-x-0 top-[14%] px-6 text-center">
         <h1 className="font-serif text-5xl font-light leading-none tracking-[0.2em] sm:text-7xl md:text-8xl">{site.title}</h1>
